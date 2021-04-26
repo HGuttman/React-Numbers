@@ -27,7 +27,7 @@ class NumbersTable extends React.Component{
             return !!selected;
         }
 
-        onSelectCLick = num => {
+        onSelectClick = num => {
             const nextState = produce(this.state, draftState =>{
                 draftState.selectedNumbers.push(num)
             });
@@ -46,7 +46,7 @@ class NumbersTable extends React.Component{
                     <h3>Selected Numbers</h3>
                     <ul className = 'list-group'>
                         {this.state.selectedNumbers.map((num, i)=>{
-                            return(<selectedNumberRow
+                            return(<SelectedNumbers
                                 num = {num}
                                 key = {i}
                                 onLockClick = {()=> this.onLockClick(num)}
@@ -89,11 +89,11 @@ class NumbersTable extends React.Component{
                     </thead>
                     <tbody>
                         {this.state.numbers.map((num, i) =>{
-                            return <numberRow
+                            return <NumberRow
                             key={i}
                             num= {num}
                             isSelected= {this.isSelected(num)}
-                            onSelectCLick = {this.onSelectCLick(num)}
+                            onSelectClick = {()=>this.onSelectClick(num)}
                             removeSelectClick = {()=> this.removeSelectClick(num)}
                             isLocked = {this.isLocked(num)}
                             />

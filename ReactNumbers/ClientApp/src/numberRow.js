@@ -17,7 +17,7 @@ class NumberRow extends React.Component{
                       </button>) :
                       (<button className={`btn btn-${isSelected ? 'danger' : 'primary'}`}
                       onClick={isSelected ? removeSelectClick : onSelectClick}>
-                      {isSelected ? 'Remove from selection' : 'Add to selection'}
+                      {isSelected ? 'Remove from Selected' : 'Add to Selected'}
                   </button>) }
                 </td>
             </tr>
